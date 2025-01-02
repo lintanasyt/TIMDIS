@@ -142,6 +142,7 @@ body {
     overflow-y: auto;
     max-width: 90%;
     word-wrap: break-word;
+    margin-bottom: 30px; /* Menambah jarak di bawah box untuk memberi ruang tombol */
 }
 
 .back-btn {
@@ -151,11 +152,28 @@ body {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-top: 20px; /* Menambah jarak atas dari teks */
+    margin-top: 20px; /* Menambah jarak antara teks dan tombol */
     display: block;
     margin-left: auto;
     margin-right: auto;
+    width: 100%; /* Tombol akan memenuhi lebar layar perangkat kecil */
+    box-sizing: border-box; /* Memastikan padding dan margin tidak merusak layout */
 }
+
+@media screen and (max-width: 768px) {
+    .message-box {
+        max-height: 60vh; /* Mengurangi tinggi box pada layar kecil */
+        max-width: 95%; /* Menyesuaikan lebar box agar lebih sesuai dengan layar kecil */
+        font-size: 14px; /* Mengurangi ukuran font agar lebih cocok di layar kecil */
+        padding: 10px; /* Mengurangi padding untuk menghemat ruang */
+    }
+    
+    .back-btn {
+        font-size: 16px; /* Menyesuaikan ukuran font tombol pada layar kecil */
+        padding: 12px; /* Memberikan padding lebih besar untuk tombol di layar kecil */
+    }
+}
+
 
     </style>
 </head>
