@@ -104,14 +104,32 @@
         }
 
         .message-box {
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            display: inline-block;
-            text-align: left;
-            position: relative;
-        }
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    text-align: left;
+    position: relative;
+    max-height: 70vh; /* Batas tinggi maksimum */
+    overflow-y: auto; /* Scroll jika konten melebihi tinggi */
+    max-width: 90%; /* Tambahkan batas lebar untuk layar kecil */
+    word-wrap: break-word; /* Memastikan kata panjang terpotong ke baris berikutnya */
+}
+
+body {
+    overflow: hidden; /* Hindari scroll di body */
+}
+
+/* Media query untuk layar kecil */
+@media screen and (max-width: 768px) {
+    .message-box {
+        max-height: 60vh; /* Kurangi tinggi maksimum untuk layar kecil */
+        max-width: 95%; /* Pastikan lebar menyesuaikan dengan layar HP */
+        font-size: 14px; /* Perkecil font agar lebih pas di layar kecil */
+    }
+}
+
 
         .back-btn {
             background-color: #BA55D3;
